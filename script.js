@@ -1,11 +1,14 @@
-function play() {
-  var handstandsButton = document.getElementById("handstands");
-  handstandsButton.onclick = playHandstands
+function play(buttonId, audioId) {
+  var playButton = document.getElementById(buttonId);
+  playButton.onclick = function() {
+    playAudio(audioId)
+  }
 }
 
-function playHandstands() {
-  var audio = document.getElementById("audio");
+function playAudio(audioId) {
+  var audio = document.getElementById(audioId);
   audio.play();
 }
 
-play()
+play("handstands", "handstands-audio")
+play("laughing", "laughing-audio")
